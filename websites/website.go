@@ -5,7 +5,7 @@ type website struct {
 	// Url site url
 	// ChapDiv chapter div where the images are located, example: cls:<classname> or id:<div id>
 
-	Name string
-	Url string
+	Name    string
+	Url     string
 	ChapDiv string
 }

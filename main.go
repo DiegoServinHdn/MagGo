@@ -25,5 +25,4 @@ func main() {
 	err := pdf.OutputFileAndClose(fileStr)
 	utils.Check(err)
 
-
 }
