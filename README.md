@@ -1,1 +1,1 @@
-# MangGo
+# ManGo
