@@ -2,7 +2,7 @@ package utils
 
 import "github.com/jung-kurt/gofpdf"
 
-func PDF(){
+func PDF() {
 	var opt gofpdf.ImageOptions
 	pdf := gofpdf.New("P", "mm", "letter", "")
 	pdf.AddPage()
@@ -18,4 +18,3 @@ func PDF(){
 	err := pdf.OutputFileAndClose(fileStr)
 	Check(err)
 }
-
