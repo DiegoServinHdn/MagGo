@@ -1,29 +1,33 @@
 package main
 
 import (
-	"ManGo/utils"
-	"ManGo/websites"
-	"fmt"
-	"github.com/jung-kurt/gofpdf"
-	"net/http"
+	// "image/color"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/app"
+	// "fyne.io/fyne/v2/canvas"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/layout"
+	"fyne.io/fyne/v2/widget"
 )
 
 func main() {
-	var opt gofpdf.ImageOptions
-	fmt.Println(websites.Manganato)
-	pdf := gofpdf.New("P", "mm", "letter", "")
-	pdf.AddPage()
-	pdf.SetFont("Arial", "", 11)
-	pdf.SetX(60)
-	opt.ImageType = "png"
-	pdf.ImageOptions("images/1.jpg", 0, 0, 216, 279, false, opt, 0, "")
-	opt.AllowNegativePosition = true
-	pdf.AddPage()
-	opt.ImageType = "jpg"
-	pdf.ImageOptions("images/5.jpg", 0, 0, 216, 279, false, opt, 0, "")
-	fileStr := "Mangas/img.pdf"
-	err := pdf.OutputFileAndClose(fileStr)
-	utils.Check(err)
+	manGo:= app.New()
+	icon, _ := fyne.LoadResourceFromPath("icons\\mangologo.png")
+	myWindow := manGo.NewWindow("ManGo")
+	myWindow.Resize(fyne.NewSize(500, 500))
+	Welcome := widget.NewLabel("Welcome to ManGO")
+	centered_welcome := container.New(layout.NewHBoxLayout(), layout.NewSpacer(), Welcome, layout.NewSpacer())
+	buttons := container.New(layout.NewHBoxLayout(), 
+		layout.NewSpacer(), 
+		widget.NewButton("Descargar", func() {
+			Welcome.SetText("hi")
+		}),
+		widget.NewButton("Cerrar", func ()  {
+			myWindow.Close()
+		}), 
+		layout.NewSpacer())
+	myWindow.SetContent(container.New(layout.NewVBoxLayout() ,centered_welcome, buttons))
 
-
+	myWindow.SetIcon(icon)
+	myWindow.ShowAndRun()
 }
