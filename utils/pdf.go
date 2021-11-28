@@ -1,6 +1,8 @@
 package utils
 
-import "github.com/jung-kurt/gofpdf"
+import (
+	"github.com/jung-kurt/gofpdf"
+)
 
 func PDF(){
 	var opt gofpdf.ImageOptions

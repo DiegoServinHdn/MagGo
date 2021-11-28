@@ -1,0 +1,17 @@
+[
+    {
+        "Name": "Manganato",
+        "Domain": "manganato.com",
+        "Url": "https://manganato.com/",
+        "ImagesXpath": "/html/body/div[1]/div[1]/div[3]/select",
+        "SelectorXpath": "/html/body/div[1]/div[3]/div[1]/div[3]/ul"
+    },
+    {
+        "Name": "Manganelo",
+        "Url": "https://manganato.com/",
+        "ChapDiv": "cls:container-chapter-reader"
+    }
+]
+
+
+

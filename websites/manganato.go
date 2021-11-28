@@ -1,7 +1,7 @@
 package websites
 
-var Manganato = website{
+var Manganato = Website{
 	Name: "Manganato",
-	Url: "https://manganato.com/",
-	ChapDiv: "cls:container-chapter-reader",
+	ImagesXpath: "https://manganato.com/",
+	SelectorXpath: "cls:container-chapter-reader",
 }
